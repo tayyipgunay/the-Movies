@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="movies"
+            type="com.tayyipgunay.themovies.domain.model.Movie"
+            />
+
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="#FFFFFF">
+
+    <!-- Büyütülmüş Görsel -->
+    <ImageView
+        android:id="@+id/imgPoster"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop" />
+
+    <!-- Sağ tarafta metin -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingTop="16dp"
+
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/Titleid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="none"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:text="@{movies.title}"
+
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/Yearid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:text="@{movies.year}"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+    </layout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movies_navigation"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.tayyipgunay.themovies.presentation.movies.views.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_movies_Details_Fragment"
+            app:destination="@id/movies_Details_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movies_Details_Fragment"
+        android:name="com.tayyipgunay.themovies.presentation.movie_detail.views.Movies_Details_Fragment"
+        android:label="Movies_Details_Fragment" >
+        <action
+            android:id="@+id/action_movies_Details_Fragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <argument
+            android:name="imdbID"
+            app:argType="string" />
+    </fragment>
+</navigation>

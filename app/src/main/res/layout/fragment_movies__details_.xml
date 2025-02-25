@@ -1,0 +1,178 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+<variable
+    name="selectedMovie"
+    type="com.tayyipgunay.themovies.domain.model.MovieDetail" />
+
+</data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp"
+    tools:context=".presentation.movie_detail.views.Movies_Details_Fragment">
+
+    <!-- Film Afişi -->
+    <ImageView
+        android:id="@+id/imgPoster"
+        android:layout_width="250dp"
+        android:layout_height="350dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Movie poster image"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Film Adı -->
+    <TextView
+        android:id="@+id/Titleid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@{selectedMovie.title}"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgPoster" />
+
+    <!-- Detaylar (Year, Actors, Country, Director) -->
+    <LinearLayout
+        android:id="@+id/linearLayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Titleid">
+
+        <!-- Yıl -->
+        <TextView
+            android:id="@+id/Yearid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@{selectedMovie.year}"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+
+        <!-- Oyuncular -->
+        <TextView
+            android:id="@+id/Actorsid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@{selectedMovie.actors}"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+
+        <!-- Ülke -->
+        <TextView
+            android:id="@+id/Countryid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@{selectedMovie.country}"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+
+        <!-- Yönetmen -->
+        <TextView
+            android:id="@+id/Directorid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@{selectedMovie.director}"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- IMDB Puanı -->
+    <LinearLayout
+        android:id="@+id/linearLayoutRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutDetails">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Star icon"
+            android:src="@drawable/ic_star"
+            app:tint="#FFD700" />
+
+        <TextView
+            android:id="@+id/ImdbRatingid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{selectedMovie.imdbRating}"
+            android:textColor="#666666"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Hata Mesajı -->
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Error Message"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutRating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/errorMessageid"
+        android:layout_width="153dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="348dp"
+        android:gravity="center"
+        android:text="Error Message!"
+        android:textColor="#FF0000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
