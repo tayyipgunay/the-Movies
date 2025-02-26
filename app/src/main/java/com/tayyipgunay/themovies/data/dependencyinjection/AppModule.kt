@@ -16,19 +16,21 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    // Retrofit API servisini sağlayan fonksiyon
     @Provides
     @Singleton
-    fun provideMovieApi():MovieAPI{
-        return Retrofit.Builder().baseUrl(Constanst.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build().create(MovieAPI::class.java)
+    fun provideMovieApi(): MovieAPI {
+        return Retrofit.Builder()
+            .baseUrl(Constanst.BASE_URL) // Temel URL belirlenir
+            .addConverterFactory(GsonConverterFactory.create()) // JSON dönüşümü için Gson kullanılır
+            .build()
+            .create(MovieAPI::class.java) // API arayüzü oluşturulur
     }
 
+    // MovieRepository bağımlılığını sağlayan fonksiyon
     @Provides
     @Singleton
     fun provideMovieRepository(api: MovieAPI): MovieRepository {
-        return MovieRepositoryIMPL(api)
-
+        return MovieRepositoryIMPL(api) // MovieRepositoryIMPL, API bağımlılığı ile oluşturulur
     }
-
 }

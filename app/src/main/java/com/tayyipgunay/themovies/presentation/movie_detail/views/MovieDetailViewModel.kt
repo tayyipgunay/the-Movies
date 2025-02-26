@@ -27,12 +27,13 @@ import retrofit2.Response
 import java.io.IOException
 import javax.inject.Inject
 @HiltViewModel
-class MovieDetailViewModel  @Inject constructor(
-    private val getMoviesDetailsUseCase: GetMoviesDetailsUseCase): BaseViewModel() {
+class MovieDetailViewModel @Inject constructor(private val getMoviesDetailsUseCase: GetMoviesDetailsUseCase) : BaseViewModel() {
 
-    val _state = MutableLiveData<MovieDetailState>()// dışarıya sunma
-    val state: LiveData<MovieDetailState> = _state//dışarıya salt okuma olarak sunma*/
+    // Film detay durumu için MutableLiveData (iç kullanım)
+    private val _state = MutableLiveData<MovieDetailState>()
 
+    // Dışarıya salt okunur olarak sunulan LiveData
+    val state: LiveData<MovieDetailState> = _state
 
    fun getMovie(imdbId: String) {
        println("getMovie çağrıldı: $imdbId")
@@ -101,22 +102,16 @@ class MovieDetailViewModel  @Inject constructor(
         }
     }
 
-
-    fun onEvent(event: MovieDetailEvent) { // Gelen event'i yönetir.
-        when (event) { // Gelen event'in türüne göre işlem yapar.
-
+    // Event yönetimi
+    fun onEvent(event: MovieDetailEvent) {
+        when (event) {
             is MovieDetailEvent.GetMovieDetailEvent -> {
-                println("search event tetiklendi ve çalışacak mı")//
-
-                getMovie(event.imdbId) // Arama event'indeki "search" parametresine göre getMovies() çağrılır.
-
-                println("search event tetiklendi ve çalıştı") // Arama event'inin tamamlandığını loglar.
-
+                println("search event tetiklendi ve çalışacak mı")
+                getMovie(event.imdbId) // IMDb ID'ye göre film detaylarını getir
+                println("search event tetiklendi ve çalıştı")
             }
         }
-
-
-        }
+    }
 
 
     }

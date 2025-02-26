@@ -4,63 +4,56 @@ import com.google.gson.annotations.SerializedName
 import com.tayyipgunay.themovies.data.remote.dto.MovieDetailDto
 import com.tayyipgunay.themovies.data.remote.dto.Rating
 
-data class MovieDetail (
-@SerializedName("Title")
-    val title: String,
+data class MovieDetail( // Tek bir filmin detaylarını temsil eden veri modeli
+
+    @SerializedName("Title")
+    val title: String, // Filmin başlığı
 
     @SerializedName("Year")
-    val year: String,
+    val year: String, // Filmin yayın yılı
 
     @SerializedName("Rated")
-    val rated: String,
+    val rated: String, // Yaş derecelendirmesi
 
     @SerializedName("Released")
-    val released: String,
+    val released: String, // Yayın tarihi
 
     @SerializedName("Genre")
-    val genre: String,
+    val genre: String, // Film türü
 
     @SerializedName("Director")
-    val director: String,
-
-
+    val director: String, // Yönetmen adı
 
     @SerializedName("Actors")
-    val actors: String,
+    val actors: String, // Oyuncu listesi
 
     @SerializedName("Plot")
-    val plot: String,
+    val plot: String, // Filmin özeti
 
     @SerializedName("Language")
-    val language: String,
+    val language: String, // Kullanılan diller
 
     @SerializedName("Country")
-    val country: String,
+    val country: String, // Ülke bilgisi
 
     @SerializedName("Awards")
-    val awards: String,
+    val awards: String, // Ödül bilgileri
 
     @SerializedName("Poster")
-    val poster: String,
-
-
-
-
+    val poster: String, // Poster URL'si
 
     @SerializedName("imdbRating")
-    val imdbRating: String,
+    val imdbRating: String, // IMDb puanı
 
     @SerializedName("imdbVotes")
-    val imdbVotes: String,
+    val imdbVotes: String, // IMDb oy sayısı
 
     @SerializedName("imdbID")
-    val imdbID: String,
+    val imdbID: String, // IMDb kimliği
 
     @SerializedName("Type")
-    val type: String,
+    val type: String, // Film veya dizi türü
 
     @SerializedName("DVD")
-    val dvd: String?, // Nullable çünkü bazen boş dönebilir
-
-    )
-
+    val dvd: String? // DVD çıkış tarihi (nullable olabilir)
+)

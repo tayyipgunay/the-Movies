@@ -28,7 +28,7 @@ import javax.inject.Inject
 
              // Yanıt başarılıysa işleme devam et
              if (response.isSuccessful) {
-                 response.body()?.let { responseBody ->
+                 response.body()?.let { responseBody ->//body null değilse
                      if (!responseBody.search.isNullOrEmpty()) {
                          Resource.Success(responseBody) // Başarılı veri döndür
                      } else {
