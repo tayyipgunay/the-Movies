@@ -6,7 +6,6 @@ Bu proje, **Clean Architecture (Temiz Mimari)** prensipleri ile geliştirilmiş 
 - **Film Listesi:** Popüler filmleri listeleme.
 - **Detay Sayfası:** Seçilen filmin detaylarını görüntüleme.
 - **API Entegrasyonu:** Film bilgilerini bir API'den çekme.
-- **Room Database:** Filmleri önbelleğe alarak çevrimdışı erişim sağlama.
 - **MVVM Kullanımı:** ViewModel ve LiveData ile veri yönetimi.
 - **Hilt Kullanımı:** Bağımlılık enjeksiyonu için.
 
