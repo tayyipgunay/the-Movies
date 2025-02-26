@@ -3,7 +3,7 @@
 Bu proje, **Clean Architecture (Temiz Mimari)** prensipleri ile geliştirilmiş bir **film keşif** uygulamasıdır. Kullanıcılar popüler filmleri listeleyebilir ve detaylarına erişebilir.
 
 ## Özellikler
-- **Film Listesi:** Popüler filmleri listeleme.
+- **Film Listesi:** istediğiniz  filmleri arayarak  listeleme.
 - **Detay Sayfası:** Seçilen filmin detaylarını görüntüleme.
 - **API Entegrasyonu:** Film bilgilerini bir API'den çekme.
 - **MVVM Kullanımı:** ViewModel ve LiveData ile veri yönetimi.
@@ -27,7 +27,7 @@ Bu proje, **Clean Architecture (Temiz Mimari)** prensipleri ile geliştirilmiş 
 
 ## Kullanım
 1. **Uygulamayı başlatın.**
-2. **Popüler filmleri listeleyin.**
+2. **istediğiniz filmi arayarak listeleyin.**
 3. **Bir filmi seçerek detaylarını görüntüleyin.**
 
 ## Kurulum
