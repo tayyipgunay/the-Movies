@@ -14,7 +14,6 @@ Bu proje, **Clean Architecture (Temiz Mimari)** prensipleri ile geliştirilmiş 
 - **Kotlin**: Android geliştirme dili.
 - **Clean Architecture**: Katmanlı mimari.
 - **Retrofit**: API istekleri için.
-- **Room Database**: Yerel veri saklama.
 - **LiveData & ViewModel**: UI güncellemeleri için.
 - **RecyclerView**: Listeleme için.
 - **Hilt**: Dependency Injection (Bağımlılık enjeksiyonu) için.
